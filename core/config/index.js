@@ -7,7 +7,7 @@ module.exports = function(options){
         util = require('util'),
 
 
-        configPath = path.resolve(process.cwd(), './ftp.config'),
+        configPath = path.resolve(process.cwd(), './dp-ftp-config.json'),
         configStr = fs.readFileSync(configPath, { encoding: 'utf8' }),
         config = _.extend({}, JSON.parse(configStr), options);
 
