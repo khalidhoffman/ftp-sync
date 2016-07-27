@@ -1,0 +1,32 @@
+{
+  "name": "ftp-sync",
+  "version": "1.0.0",
+  "description": "Uploads local files to remote server via FTP",
+  "bin": {
+    "dp-ftp-sync": "bin/run.js",
+    "dp-ftp-setup": "bin/setup.js"
+  },
+  "keywords": [
+    "ftp",
+    "sync"
+  ],
+  "author": "Khalid Hoffman",
+  "license": "ISC",
+  "scripts": {
+    "start": "node bin/run.js",
+    "setup" : "node bin/setup.js"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "backbone": "^1.3.2",
+    "dir-compare": "^1.0.1",
+    "ftp": "^0.3.10",
+    "glob": "^7.0.3",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "jade": "^1.11.0",
+    "lodash": "^4.14.0",
+    "moment": "^2.12.0"
+  },
+  "devDependencies": {}
+}
