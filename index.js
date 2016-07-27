@@ -66,11 +66,11 @@ module.exports = function FTPSyncer(callback, options) {
 
     ftp.on('close', function () {
         if (config.DEBUG_LOW) console.log('ftp.close(%s)', dump(arguments));
+        if (onSyncComplete) onSyncComplete()
     });
 
     ftp.on('end', function () {
         if (config.DEBUG_LOW) console.log('ftp.end(%s)', dump(arguments));
-        if (onSyncComplete) onSyncComplete()
     });
 
     this.start = function (callback) {

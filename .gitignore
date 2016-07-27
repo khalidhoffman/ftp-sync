@@ -1,4 +1,4 @@
-ftp.config
+dp-ftp-config.json
 .jsbeautifyrc
 /*.php
 *.bak

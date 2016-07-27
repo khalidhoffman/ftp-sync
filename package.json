@@ -1,6 +1,6 @@
 {
   "name": "ftp-sync",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Uploads local files to remote server via FTP",
   "bin": {
     "dp-ftp-sync": "bin/run.js",
@@ -14,7 +14,7 @@
   "license": "ISC",
   "scripts": {
     "start": "node bin/run.js",
-    "setup" : "node bin/setup.js"
+    "setup": "node bin/setup.js"
   },
   "dependencies": {
     "async": "^2.0.1",
