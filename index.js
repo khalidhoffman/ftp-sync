@@ -59,8 +59,9 @@ module.exports = function FTPSyncer(callback, options) {
         });
     });
 
-    ftp.on('error', function () {
+    ftp.on('error', function (err) {
         if (config.DEBUG_LOW) console.log('ftp.error(%s)', dump(arguments));
+        if(config.onError) config.onError(err);
     });
 
     ftp.on('close', function () {
