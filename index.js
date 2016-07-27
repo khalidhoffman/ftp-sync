@@ -74,6 +74,7 @@ module.exports = function FTPSyncer(callback, options) {
 
     this.start = function (callback) {
         if (config.DEBUG_LOW) console.log('Connecting with %s', dump(ftpOptions));
+        onSyncComplete = callback;
         ftp.connect(ftpOptions);
     }
 };
