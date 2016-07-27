@@ -1,4 +1,4 @@
-module.exports = function FTPSyncer(options) {
+module.exports = function FTPSyncer(callback, options) {
     var fs = require('fs'),
         util = require('util'),
         path = require('path'),
@@ -14,7 +14,8 @@ module.exports = function FTPSyncer(options) {
 
         ftp = new FTPClient(),
         ftpSync = new FTPSync({client: ftp}),
-        config = new require('./core/config')(options),
+        config = new require('./core/config')(_.isFunction(callback) ? options : callback),
+        onSyncComplete = _.isFunction(callback) ? callback : false,
         ftpOptions = (config.DEBUG_HIGH) ? _.extend({}, config.ftp, {
             debug: config.debug
         }) : config.ftp;
@@ -68,9 +69,10 @@ module.exports = function FTPSyncer(options) {
 
     ftp.on('end', function () {
         if (config.DEBUG_LOW) console.log('ftp.end(%s)', dump(arguments));
+        if (onSyncComplete) onSyncComplete()
     });
 
-    this.start = function () {
+    this.start = function (callback) {
         if (config.DEBUG_LOW) console.log('Connecting with %s', dump(ftpOptions));
         ftp.connect(ftpOptions);
     }
