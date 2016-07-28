@@ -2,8 +2,8 @@
 Uploads locals files via ftp
 
 ### How To Use:
-1. run `npm run setup`. This duplicates example config to `ftp.config`
-2. Edit `ftp.config` appropriately
+1. run `npm run setup`. This duplicates example config to `dp-ftp-config.json`
+2. Edit `dp-ftp-config.json` appropriately
 3. run `npm start`
 
 #### Example Config
